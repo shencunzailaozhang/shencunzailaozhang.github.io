@@ -1,7 +1,7 @@
 # Basic
 title: 喜欢白醋
 subtitle:
-welcome_message: <a href="https://zhaoyuivan.github.io/#blog" target="_blank">fighting!</a>
+welcome_message: <a href="https://shencunzailaozhang.github.io/#blog" target="_blank">fighting!</a>
 description: 立志要当程序猿
 creator: <a href="https://shencunzailaozhang.github.io/#blog">@shencunzailaozhang</a>
 
@@ -22,7 +22,7 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-    - {title: Projects, description: My Projects, url: 'https://github.com/zhaoyuivan'}
+    - {title: Projects, description: My Projects, url: 'https://github.com/shencunzailaozhang'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
@@ -38,10 +38,10 @@ comment:
 # Social
 social:
 #    weibo: onevcat
-    github: zhaoyuivan
+    github: shencunzailaozhang
 #    twitter: onevcat
 #    gplus: 107108267983477358170
-    mail: zhaoyuivanzhao@126.com
+    mail: 1137804516@qq.com
 
 # Google Analytics
 ga:
