@@ -19,7 +19,7 @@ date: 2018-06-03
   若不为空，则把右结点当作根结点，重复步骤1。直到栈中没有元素，整棵二叉树遍历完毕。
   # 代码如下：
   
-``` 
+``` C++
 #include "stdafx.h"
 #include<stdio.h>
 #include<stdlib.h>
