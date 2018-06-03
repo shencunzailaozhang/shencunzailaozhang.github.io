@@ -35,19 +35,18 @@ using namespace std;
 typedef int binaryTreeType; //二叉树类型
 int a[1024] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62 };
 
-typedef struct node
+typedef struct node//二叉树结点类型
 {
 	binaryTreeType data;
 	struct node *leftChild, *rightChild;
 }bitree;
 
 binaryTreeType *m = new binaryTreeType[maxsize];
-void shuzu()
+void shuzu()//生成随机数
 {
 	srand((unsigned)time(NULL));
 	for (int i = 0; i<pow(2, N) - 1; i++){//随机生成结点
 		m[i] = rand();
-		//m[i] = a[i];
 	}
 }
 bitree *root = (bitree *)malloc(sizeof(bitree));
@@ -75,9 +74,8 @@ bitree *createTree() //建二叉树返回指向根的指针
 	}
 	return root; //返回根指针
 }
-//bitree **num = new bitree*[maxsize];
 bitree *t = (bitree *)malloc(sizeof(bitree));
-void nonVerPostOrder(bitree *rooot, int m, binaryTreeType n[]) //非递归后序
+void nonVerPostOrder(bitree *rooot, int m, binaryTreeType n[]) //非递归后序,以rooot为根节点，m为层高，数组n用来存放后序遍历序列
 {
 	bitree **num = new bitree*[maxsize];
 	bitree *p;
@@ -108,12 +106,8 @@ void nonVerPostOrder(bitree *rooot, int m, binaryTreeType n[]) //非递归后序
 			}
 		}
 	}
-	//for (i = 0; i < pow(2, m) - 1; i++)
-	//{
-	//	printf("%d ", n[i]);
-	//}
 }
-void output(binaryTreeType n[], binaryTreeType m){
+void output(binaryTreeType n[], binaryTreeType m){//用来输出层高为m的树的遍历序列
 	for (binaryTreeType i = 0; i < pow(2, m) - 1; i++)
 	{
 		printf("%d ", n[i]);
@@ -135,7 +129,6 @@ int _tmain(){
 	getchar();
 	delete[] m;
 	delete[] QUEUE;
-	//delete[] num;
 	return 0;
 }
 ```
