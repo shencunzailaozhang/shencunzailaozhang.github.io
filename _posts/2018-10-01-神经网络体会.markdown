@@ -144,7 +144,8 @@ for record in test_data_list:
     all_values = record.split(',')                                      ######################把数据集中的数字放到all_values中
     # correct answer is first value
     correct_label = int(all_values[0])                                  ######################数据集中第一个数就是手写字的数值
-##################把all_values第一个元素以外的数字都转化为0.01-0.99之间的数字，这样做的好处是让activate_function正常地工作，可以更好地地更新权重
+
+######把all_values第一个元素以外的数字都转化为0.01-0.99之间的数字，这样做的好处是让activate_function正常地工作，可以更好地地更新权重##########
     # scale and shift the inputs
     inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01     
     # query the network
