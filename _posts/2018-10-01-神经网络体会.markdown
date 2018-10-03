@@ -11,7 +11,6 @@ date: 2018-01-29
 不得不说，这个问题困扰了我很久，怎么把乱七八糟的输出和数字对应起来呢，直到刚刚我才解决了这个问题，这也是这篇blog的初衷。首先得知道手写集的格式，现在广为使用的mnist.csv数据集里每个手写字由785个0-255范围（黑到白的范围）内的数字组成的，第一个数字表示的是手写字的数值，剩下的784个数字可以用matplotlib.pyplot中的imshow函数处理为28x28的图片形式，这样可以很直观地看到，784个数字经过归一化处理后变成输入数组放进输入层，也就是说输入层有784个节点。在识别之前需要进行大量的训练，因为是识别十个数字（0-9），所以让输出节点个数为10，我们让这十个节点中对应正确手写字数值的节点的权值为0.99，其余的权值为0.01，然后把这十个权值当作目标数组，将输入数组和目标数组放入训练函数中训练。经过训练后，我们可以用测试集中的数据作为输入放进query函数中可以得到输出，**输出数组中的最大值对应的索引值便是神经网络给出的手写字的答案**。
 
 
-
 ```python
 import numpy
 import scipy.special
@@ -20,8 +19,8 @@ import matplotlib.pyplot
 
 # neural network class definition
 class neuralNetwork:
-    
-    
+
+
     # initialise the neural network
     def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
         # set number of nodes in each input, hidden, output layer
@@ -93,8 +92,6 @@ class neuralNetwork:
         return final_outputs
 
 
-
-
 # number of input, hidden and output nodes
 input_nodes = 784
 hidden_nodes = 200
@@ -161,8 +158,7 @@ for record in test_data_list:
     else:
         # network's answer doesn't match correct answer, add 0 to scorecard
         scorecard.append(0)
-        pass
-    
+        pass    
     pass
 
 # calculate the performance score, the fraction of correct answers
