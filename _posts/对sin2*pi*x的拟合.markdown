@@ -194,4 +194,6 @@ plt.plot(X,y,'blue')
 plt.plot(X,y_pred,'red')
 plt.show()
 ```
+# 总结
+以后也要努力啊，不要逃避问题，尽全力之后才有资格说放弃！！！
 
