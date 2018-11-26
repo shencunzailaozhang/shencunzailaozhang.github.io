@@ -17,4 +17,68 @@ date: 2018-11-26
 - 要细心，对待权重矩阵的更新要慎重，而且偏置项真的很重要！！！
 # 代码一
 - 输入值为一个数，输入了101个数便更新了101次权重和偏置，将它们分别加起来然后求平均值，把平均值矩阵作为最终的权重和偏置矩阵。代码如下：
+``` Python
+#-*- coding: utf-8 -*-
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+I = 0.03  # 学习速率
+sampleNum = 101  # 采样点数目
+hideCellsNum = 25  # 隐藏单元个数
+iterTimes = 500  # 迭代次数
+x = np.arange(0, 1.01, 0.01).reshape(sampleNum, 1)
+y = 200 * np.sin(2 * np.pi * x)
+random=np.random.RandomState(0)
+W = random.normal(0.0, pow(1, -0.5), (hideCellsNum,1))
+V = random.normal(0.0, pow(1, -0.5), (hideCellsNum,1))
+b = random.normal(0.0, pow(1, -0.5), (hideCellsNum,1))
+e = random.normal(0.0, pow(1, -0.5), (1,1))
+def logistic(t):
+    return 1/(1 + np.exp(-t))
+sum_loss_list = []
+for i in range(iterTimes):  # 第i次迭代
+    y_pred = []
+    delta_V_all = np.zeros((hideCellsNum, 1))
+    delta_W_all = np.zeros((hideCellsNum, 1))
+    delta_e_all = np.zeros((1, 1))
+    delta_b_all = np.zeros((hideCellsNum, 1))
+    loss_list = []
+    for k in range(sampleNum):
+        # 前向传播
+        net1 = W * x[k] + b
+        out1 = logistic(net1)
+        net2 = np.dot(np.transpose(V), out1)
+        out = net2  # 输出激活函数
+        y_pred.append(out)
+        # loss = float(1.0 / 2 * (y[k] - out) * (y[k] - out))
+        loss = 1.0 / 2 * (y[k] - out) * (y[k] - out)
+        loss_list.append(loss)
+
+        # 反向传播
+        delta_V = -I * (y[k] - out) * (-1) * 1 * out1
+        delta_W = -I * (y[k] - out) * (-1) * 1 * V * out1 * (1 - out1) * x[k]
+        delta_e = -I * (y[k] - out) * (-1) * 1 * 1
+        delta_b = -I * (y[k] - out) * (-1) * 1 * V * out1 * (1 - out1) * 1
+
+        delta_V_all = delta_V_all + delta_V
+        delta_W_all = delta_W_all + delta_W
+        delta_e_all = delta_e_all + delta_e
+        delta_b_all = delta_b_all + delta_b
+    V = V + delta_V_all / sampleNum
+    W = W + delta_W_all / sampleNum
+    b = b + delta_b_all / sampleNum
+    e = e + delta_e_all / sampleNum
+    sum_loss = sum(loss_list)
+    sum_loss_list.append(sum_loss)
+    print ('iterate'+str(i)+' loss:'+str(sum_loss))
+plt.figure()
+plt.plot(x, y, 'red')
+plt.plot(x, np.array(y_pred).reshape(sampleNum, 1), 'black')
+plt.title('BP_iterate:' + str(i))
+plt.xlabel('x')
+plt.ylabel('y')
+plt.show()
+```
 
