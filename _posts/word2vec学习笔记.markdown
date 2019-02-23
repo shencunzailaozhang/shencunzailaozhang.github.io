@@ -17,4 +17,7 @@
 这些和word2vec有什么关系呢？
 ### word2vec是包含CBOW和Skip-gram的训练词向量的工具。  
 所以学word2vec其实是在学CBOW和Skip-gram。CBOW是给定上下文单词来预测中心词，Skip-gram是给定中心词来预测上下文单词，如图所示![](/assets/images/structure.jpg)
+## 问题及答案
+### 1. CBOW和Skip-gram的输入和输出分别是什么形式？如何更新得到想要的词向量？
+  答：先说一下CBOW的网络结构CBOW的输入是上下文单词的one-hot向量，输出是一个经过神经网络计算后的概率向量；将这个概率向量与真实中心词的经过神经网络计算后的概率向量作比较，算出损失值
 
