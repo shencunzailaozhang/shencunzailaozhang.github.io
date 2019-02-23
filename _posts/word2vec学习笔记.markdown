@@ -24,7 +24,8 @@
   CBOW的输入是上下文单词的one-hot向量,这些向量分别乘以一个权重矩阵然后再相加求平均，输出是一个经过神经网络计算后的概率向量；  
   **将这个概率向量与真实中心词经过神经网络计算后的概率向量作比较，算出损失值，目标是让损失值达到最小**。  
   然后再取其它的中心词，重复上述步骤。  
-  skip-gram网络结构，如图所示![](/assets/images/skipgramstructure.jpg)  
+  skip-gram网络结构，如图所示  
+  ![](/assets/images/skipgramstructure.jpg)  
   skipgram的输入是中心词的one-hot向量，输出是多个上下文单词的概率向量（**它们的概率向量都是一样的**），然后分别与它们所对应的真实词的one-hot向量作比较，最小化损失值。  
   然后再取其它的中心词，重复上述步骤，如图所示![](/assets/images/skipgram.jpg)  
 
