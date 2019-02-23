@@ -16,5 +16,5 @@
   - Mikolov 等人提出了 CBOW（ Continuous Bagof-Words）和 Skip-gram 模型  
 这些和word2vec有什么关系呢？
 ### word2vec是包含CBOW和Skip-gram的训练词向量的工具。  
-所以学word2vec其实是在学CBOW和Skip-gram。CBOW是给定上下文单词来预测中心词，Skip-gram是给定中心词来预测上下文单词，如图所示![]()
+所以学word2vec其实是在学CBOW和Skip-gram。CBOW是给定上下文单词来预测中心词，Skip-gram是给定中心词来预测上下文单词，如图所示![](/assets/images/structure.jpg)
 
