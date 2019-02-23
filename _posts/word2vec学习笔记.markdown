@@ -6,13 +6,12 @@
 分布式表示有以下几种
 - 基于矩阵的分布式表示
 - 基于聚类的分布式表示
-- 基于神经网络的分布式表示（词嵌入word embedding）
-
+- 基于神经网络的分布式表示（词嵌入word embedding）  
 主要将基于神经网络的分布式表示，基于神经网络的分布式表示又有以下几种模型
--- Neural Network Language Model ，NNLM
--- Log-Bilinear Language Model， LBL
--- Recurrent Neural Network based Language Model，RNNLM
--- Collobert 和 Weston 在2008 年提出的 C&W 模型
--- Mikolov 等人提出了 CBOW（ Continuous Bagof-Words）和 Skip-gram 模型
-这些和word2vec有什么关系呢？
-## word2vec是包含CBOW和Skip-gram的训练词向量的工具。
+  - Neural Network Language Model ，NNLM
+  - Log-Bilinear Language Model， LBL
+  - Recurrent Neural Network based Language Model，RNNLM
+  - Collobert 和 Weston 在2008 年提出的 C&W 模型
+  - Mikolov 等人提出了 CBOW（ Continuous Bagof-Words）和 Skip-gram 模型  
+  这些和word2vec有什么关系呢？
+#### word2vec是包含CBOW和Skip-gram的训练词向量的工具。
