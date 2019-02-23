@@ -27,5 +27,6 @@
   skip-gram网络结构，如图所示  
   ![](/assets/images/skipgramstructure.jpg)  
   skipgram的输入是中心词的one-hot向量，输出是多个上下文单词的概率向量（**它们的概率向量都是一样的**），然后分别与它们所对应的真实词的one-hot向量作比较，最小化损失值。  
-  然后再取其它的中心词，重复上述步骤，如图所示![](/assets/images/skipgram.jpg)  
+  然后再取其它的中心词，重复上述步骤，如图所示  
+  ![](/assets/images/skipgram.jpg)  
 
