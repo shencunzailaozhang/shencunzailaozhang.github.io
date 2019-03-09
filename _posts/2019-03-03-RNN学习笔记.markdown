@@ -10,7 +10,7 @@ RNN主要是为了解决序列问题而产生的，可以应用于很多与序�
 ## 序列分类(N21)
 - 输入是一个序列，输出是一个单独的值而不是序列，这种结构通常用来处理序列分类问题。如输入一段文字判别它所属的类别，输入一个句子判断其情感倾向，输入一段视频并判断它的类别等等。 
 - 可以对最后一个 h 进行输出变换，或对所有的 h 进行平均后再进行输出变换
-  ![](/assets/images/N21.jpg) 
+![](/assets/images/N21.jpg) 
 ## 文本生成(12N)
 - 从图像生成文字（image caption），此时输入的X就是图像的特征，而输出的y序列就是一段句子;从类别生成语音或音乐;从关键字生成文章等
 - 只在序列开始进行输入计算，其它 time step 输入为 0 
@@ -42,7 +42,7 @@ RNN主要是为了解决序列问题而产生的，可以应用于很多与序�
 ![](/assets/images/LSTM_structure.png)  
 ![](/assets/images/LSTM_describe2.PNG)   
 ### LSTM的变体————GRU
-![](/assets/images/GRU_describe.PNG)  
+![](/assets/images/GRU_describ.PNG)  
 ![](/assets/images/GRU.png)  
 # 注意力机制 
 因为要解决序列问题，产生了RNN，但RNN也有其自身的缺陷————反向传播计算梯度时可能会出现[梯度消失或爆炸](https://zhuanlan.zhihu.com/p/28687529)的情况，为了解决这个问题，产生了LSTM，LSTM通过三个门决定要忘掉多少历史信息，存储多少新信息，但LSTM也有自己的[局限性](https://blog.csdn.net/songbinxu/article/details/80739447)————它对encoder中所有时刻隐层输出都采取同样的操作，然后输入到decoder中，这样没有侧重，所以注意力机制应运而生。 
