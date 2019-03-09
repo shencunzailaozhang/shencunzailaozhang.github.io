@@ -35,7 +35,7 @@ RNN主要是为了解决序列问题而产生的，可以应用于很多与序�
 可以展开成这样  
 ![](/assets/images/RNN_structure2.jpg)   
 这个网络在t时刻接收到输入Xt之后，隐藏层的值是St，输出值是ot。关键一点是，st的值不仅仅取决于Xt，还取决于St−1。我们可以使用下面的公式来表示循环神经网络的计算方法：(f一般为tanh函数，g一般为softmax函数) 
-![](/assets/images/RNN_gongshi1.png)   
+![](/assets/images/RNN_gongshi1.PNG)   
 ## RNN常用变体————LSTM 
 ### 结构及公式  
 ![](/assets/images/LSTM_describe1.PNG)  
