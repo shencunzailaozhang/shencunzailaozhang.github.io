@@ -1,7 +1,7 @@
 ---
 layout: post
 title: BiLSTM+CRF笔记
-date: 2019-03-25
+date: 2019-04-04
 --- 
 BiLSTM+CRF是2018年在英语NER任务上表现最好的模型，学它也有十多天了，之前只是了解个大概，然后忙于学其它东西，结果泛学让我有种什么都没学到的感觉，涉及到内部的还是一无所知，所以今天认真看了它的公式，理解得更深刻了一些。 结构简图如下：  
 ![](/assets/images/1.png)   
@@ -25,7 +25,10 @@ P的解释如下：
 ![](/assets/images/8.png)  
 公式的解释和预测如下图：  
 ![](/assets/images/9.png) 
-***
+***  
+# 我的理解  
+![](/assets/images/11.JPG)  
+![](/assets/images/12.JPG) 
 
 
 
