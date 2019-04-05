@@ -17,7 +17,9 @@ BiLSTM+CRF是2018年在英语NER任务上表现最好的模型，学它也有十
 我们定义X -> y得到的分数公式如下图：  
 ![](/assets/images/5.png)   
 A的解释如下：  
-![](/assets/images/6.png)   
+![](/assets/images/6.png)  
+P的解释如下：  
+![](/assets/images/10.png) 
 ![](/assets/images/7.png)  
 我们的目标就是输入X对应正确的序列y的概率最大，用似然函数表示如下：  
 ![](/assets/images/8.png)  
