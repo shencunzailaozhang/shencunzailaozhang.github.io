@@ -8,8 +8,8 @@ BiLSTM+CRF是2018年在英语NER任务上表现最好的模型，学它也有十
 ![](/assets/images/2.png)  
 # 流程
 首先输入单词，单词经过look-up层（通过CBOW、skip-gram或者是Glove等模型构造出look-up table，再将字映射为向量），变成了字向量，再经过BiLSTM层后得到包含上下文信息的向量h，h是上文信息向量h-before和下文信息向量h-after的拼接。再经过一个dropout层后，将h的维度映射为维度为标签个数的向量。再经过一个CRF层后输出得分最高的标签序列，就是我们要求的序列。 
-***
 # 公式 
+***
 假设输入句子如下图（括号中的元素为句中的字）：  
 ![](/assets/images/3.png)   
 对应的标签如下：  
