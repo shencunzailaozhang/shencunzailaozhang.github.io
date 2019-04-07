@@ -31,7 +31,4 @@ P的解释如下：
 ![](/assets/images/12.JPG)   
 
 ***  
-以上图片来自一篇[blog](https://createmomo.github.io/2017/09/12/CRF_Layer_on_the_Top_of_BiLSTM_1/)和论文[Neural Architectures for Named Entity Recognition](/assets/images/Neural Architectures for Named Entity Recognition.pdf)
-
-
-
+以上图片来自一篇[blog](https://createmomo.github.io/2017/09/12/CRF_Layer_on_the_Top_of_BiLSTM_1/)和[论文](/assets/images/Neural Architectures for Named Entity Recognition.pdf)
