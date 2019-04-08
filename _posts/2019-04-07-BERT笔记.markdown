@@ -1,12 +1,14 @@
 ---
 layout: post
 title: BiLSTM+CRF笔记
-date: 2019-04-04
+date: 2019-04-07
 ---  
 # 前言  
 虽然早就知道[Transformer](https://github.com/tensorflow/tensor2tensor)、[BERT](https://github.com/google-research/bert#fine-tuning-with-bert)、[paddlepaddle](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)，也知道它们很好用，但觉得很复杂就一直拖着没去尝试，在看完了ACL2018和NER相关的[论文](https://arxiv.org/abs/1805.02023)后（[项目地址](https://github.com/shencunzailaozhang/LatticeLSTM)），我终于决定尝试新模型了，网上现在做NER的模型大多是BiLSTM+CRF，区别就在于对字/词向量的提取、处理等。ACL这篇论文是将字向量与词向量融合起来当作网络的输入，但和BERT比起来，它对向量的处理还是略显幼稚，虽然BERT是基于字符的，并没有融入词语信息，但我觉得BERT中的自注意力机制让它可以捕获上下文意思，但还没经过实验，我也不知道哪个比较好用，但BERT已经在众多数据集上达到了sota水准，所以我要开始深入BERT了。
 # 先验知识  
 ## 博客
-[从Word Embedding到Bert模型—自然语言处理中的预训练技术发展史](https://zhuanlan.zhihu.com/p/49271699)    
+[从Word Embedding到Bert模型—自然语言处理中的预训练技术发展史](https://zhuanlan.zhihu.com/p/49271699)BERT发展史    
+[The Illustrated Transformer【译】](https://blog.csdn.net/yujianmin1990/article/details/85221271)详细解释了Transformer
 ## 论文  
-[Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+[Attention Is All You Need](https://arxiv.org/abs/1706.03762)解释了Transformer中的注意力机制  
+
