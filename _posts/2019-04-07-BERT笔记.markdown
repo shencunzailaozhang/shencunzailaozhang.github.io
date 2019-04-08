@@ -39,7 +39,8 @@ tokenization是对原始句子内容的解析，分为BasicTokenizer和Wordpiece
 这是别人写的代码——[使用预训练语言模型BERT做中文NER](https://github.com/ProHiryu/bert-chinese-ner)    
 ## 注意事项  
   - 代码不能直接用，除了按照作者README.md中写的那样操作外，还需要在项目中加入output文件夹，output文件夹中还要加入result_dir文件夹。  
-  $\begin{aligned} y=y(x, t) &=A e^{i \theta} \\ &=A(\cos \theta+i \sin \theta) \\ &=A(\cos (k x-\omega t)+i \sin (k x-\omega t)) \\ &=A \cos (k x-\omega t)+i A \sin (k x-\omega t) \\ &=A \cos \left(\frac{2 \pi}{\lambda} x-\frac{2 \pi v}{\lambda} t\right)+i A \sin \left(\frac{2 \pi}{\lambda} x-\frac{2 \pi v}{\lambda} t\right) \\ &=A \cos \frac{2 \pi}{\lambda}(x-v t)+i A \sin \frac{2 \pi}{\lambda}(x-v t) \end{aligned}$
+  $\begin{aligned} y=y(x, t) &=A e^{i \theta} \\ &=A(\cos \theta+i \sin \theta) \\ &=A(\cos (k x-\omega t)+i \sin (k x-\omega t)) \\ &=A \cos (k x-\omega t)+i A \sin (k x-\omega t) \\ &=A \cos \left(\frac{2 \pi}{\lambda} x-\frac{2 \pi v}{\lambda} t\right)+i A \sin \left(\frac{2 \pi}{\lambda} x-\frac{2 \pi v}{\lambda} t\right) \\ &=A \cos \frac{2 \pi}{\lambda}(x-v t)+i A \sin \frac{2 \pi}{\lambda}(x-v t) \end{aligned}$  
+  $\underbrace{ a+b+\cdots+z }_{26}$
 
 
 
