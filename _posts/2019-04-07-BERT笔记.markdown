@@ -20,10 +20,10 @@ date: 2019-04-07
 
 **A:** unknown for now    
 
-**Q:BERT中各个文件的作用**    
+**Q:BERT源码解读**    
 
 **A:** 
-- [modeling.py解读](https://www.jianshu.com/p/d7ce41b58801)  
+- [modeling.py](https://www.jianshu.com/p/d7ce41b58801)  
 - [tokenization.py](https://www.jianshu.com/p/22e462f01d8c)  
 tokenization是对原始句子内容的解析，分为BasicTokenizer和WordpieceTokenizer两个。 
   - BasicTokenizer的主要是进行unicode转换、标点符号分割、小写转换、中文字符分割、去除重音符号等操作，最后返回的是关于词的数组（中文是字的数组）。  
@@ -32,7 +32,9 @@ tokenization是对原始句子内容的解析，分为BasicTokenizer和Wordpiece
 - [create_pretraining_data.py](https://www.jianshu.com/p/22e462f01d8c)  
 对原始数据进行转换，原始数据本是无标签的数据，通过句子的拼接可以产生句子关系的标签，通过MASK可以产生标注的标签，其本质是语言模型的应用    
 - [run_pretraining.py](https://www.jianshu.com/p/22e462f01d8c)  
-在执行预训练的时候针对以上两种标签分别利用bert模型的不同输出部件，计算loss，然后进行梯度下降优化。
+在执行预训练的时候针对以上两种标签分别利用bert模型的不同输出部件，计算loss，然后进行梯度下降优化。  
+- [run_squad.py](https://www.jianshu.com/p/116bfdb9119a)  
+- [run_classifier.py](https://www.jianshu.com/p/116bfdb9119a)
 
 
 
