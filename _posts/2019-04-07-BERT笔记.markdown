@@ -10,5 +10,11 @@ date: 2019-04-07
 [从Word Embedding到Bert模型—自然语言处理中的预训练技术发展史](https://zhuanlan.zhihu.com/p/49271699)BERT发展史    
 [The Illustrated Transformer【译】](https://blog.csdn.net/yujianmin1990/article/details/85221271)详细解释了Transformer
 ## 论文  
-[Attention Is All You Need](https://arxiv.org/abs/1706.03762)解释了Transformer中的注意力机制  
+[Attention Is All You Need](https://arxiv.org/abs/1706.03762)解释了Transformer中的注意力机制    
+# FAQ(frequently asked questions)  
+**Q:到底是直接用BERT做NER还是BERT只用来生成字向量，再将字向量置于其它模型中？**  
+**A:**我倾向于后者，BERT是用来捕捉字/句子之间深度关系的，然后输出是向量，这大概就是BERT的作用了，之后再将字/句子向量输入到其它模型中。但是想得到字向量，得先把输入改造成BERT需要的样子。
+**对于NER而言，如何预处理数据呢？**   
+**A:**unknown for now
+
 
