@@ -33,14 +33,21 @@ tokenization是对原始句子内容的解析，分为BasicTokenizer和Wordpiece
 对原始数据进行转换，原始数据本是无标签的数据，通过句子的拼接可以产生句子关系的标签，通过MASK可以产生标注的标签，其本质是语言模型的应用    
 - [run_pretraining.py](https://www.jianshu.com/p/22e462f01d8c)  
 在执行预训练的时候针对以上两种标签分别利用bert模型的不同输出部件，计算loss，然后进行梯度下降优化。  
-- [run_squad.py](https://www.jianshu.com/p/116bfdb9119a)  
-- [run_classifier.py](https://www.jianshu.com/p/116bfdb9119a)  
+- [run_squad.py](https://www.jianshu.com/p/116bfdb9119a)（run_squad.py和run_classifier.py是bert中fine-tune的例子）  
+- [run_classifier.py](https://blog.csdn.net/u014108004/article/details/84142035#commentBox)（讲的很好，还涉及了如何把代码改造成自己需要的样子）
 # 代码  
-这是别人写的代码——[使用预训练语言模型BERT做中文NER](https://github.com/ProHiryu/bert-chinese-ner)    
+- 这是别人写的代码——[使用预训练语言模型BERT做中文NER](https://github.com/ProHiryu/bert-chinese-ner)    
+- 可以生成字/词/句子向量，但维度相同，不知道这有何意义，但字向量至少是可以用的，而且极其简单。[项目地址](https://github.com/hanxiao/bert-as-service)  
+- 另一个基于Keras的代码，也可以用，用起来也很简单。 作者还写了一个实例 
+  - [项目地址](https://github.com/BrikerMan/Kashgari)  
+  - [基于 BERT 的中文命名实体识别](https://eliyar.biz/nlp_chinese_bert_ner/)
 ## 注意事项  
-  - 代码不能直接用，除了按照作者README.md中写的那样操作外，还需要在项目中加入output文件夹，output文件夹中还要加入result_dir文件夹。
+  - 代码不能直接用，除了按照作者README.md中写的那样操作外，还需要在项目中加入output文件夹，output文件夹中还要加入result_dir文件夹。  
+# 我的理解  
+参考BERT中自带的fine-tune的实例（run_squad.py和run_classifier.py）可以发现，想把BERT用于NER，首先得把自己的输入改造成BERT所需的格式，然后写一个Processor类，这个类就和run_classifier.py中的Processor结构相同，但是里面的方法要重写。除此之外，还可以加上自己的损失函数（在create_model中），还可以加入CRF层等。
 
 
 
 # 参考博客  
 <https://www.jianshu.com/p/22e462f01d8c>
+<https://blog.csdn.net/u014108004/article/details/84142035#commentBox>
