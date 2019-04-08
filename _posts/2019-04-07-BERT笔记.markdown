@@ -40,7 +40,7 @@ tokenization是对原始句子内容的解析，分为BasicTokenizer和Wordpiece
 - 可以生成字/词/句子向量，但维度相同，不知道这有何意义，但字向量至少是可以用的，而且极其简单。[项目地址](https://github.com/hanxiao/bert-as-service)  
 - 另一个基于Keras的代码，也可以用，用起来也很简单。 作者还写了一个实例 
   - [项目地址](https://github.com/BrikerMan/Kashgari)  
-  - [基于 BERT 的中文命名实体识别](https://eliyar.biz/nlp_chinese_bert_ner/)
+  - [实例](https://eliyar.biz/nlp_chinese_bert_ner/)
 ## 注意事项  
   - 代码不能直接用，除了按照作者README.md中写的那样操作外，还需要在项目中加入output文件夹，output文件夹中还要加入result_dir文件夹。  
 # 我的理解  
