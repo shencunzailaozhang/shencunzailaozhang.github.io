@@ -24,12 +24,15 @@ date: 2019-04-07
 
 **A:** 
 - [modeling.py解读](https://www.jianshu.com/p/d7ce41b58801)  
-- [tokenization.py](https://www.jianshu.com/p/22e462f01d8c)tokenization是对原始句子内容的解析，分为BasicTokenizer和WordpieceTokenizer两个。  
+- [tokenization.py](https://www.jianshu.com/p/22e462f01d8c)  
+tokenization是对原始句子内容的解析，分为BasicTokenizer和WordpieceTokenizer两个。 
   - BasicTokenizer的主要是进行unicode转换、标点符号分割、小写转换、中文字符分割、去除重音符号等操作，最后返回的是关于词的数组（中文是字的数组）。  
   - WordpieceTokenizer的目的是将合成词分解成类似词根一样的词片。例如将"unwanted"分解成["un", "##want", "##ed"]这么做的目的是防止因为词的过于生僻没有被收录进词典最后只能以[UNK]代替的局面，因为英语当中这样的合成词非常多，词典不可能全部收录。  
   - FullTokenizer的作用就很显而易见了，对一个文本段进行以上两种解析，最后返回词（字）的数组，同时还提供token到id的索引以及id到token的索引。这里的token可以理解为文本段处理过后的最小单元。    
-- [create_pretraining_data.py](https://www.jianshu.com/p/22e462f01d8c)对原始数据进行转换，原始数据本是无标签的数据，通过句子的拼接可以产生句子关系的标签，通过MASK可以产生标注的标签，其本质是语言模型的应用    
-- [run_pretraining.py](https://www.jianshu.com/p/22e462f01d8c)：在执行预训练的时候针对以上两种标签分别利用bert模型的不同输出部件，计算loss，然后进行梯度下降优化。
+- [create_pretraining_data.py](https://www.jianshu.com/p/22e462f01d8c)  
+对原始数据进行转换，原始数据本是无标签的数据，通过句子的拼接可以产生句子关系的标签，通过MASK可以产生标注的标签，其本质是语言模型的应用    
+- [run_pretraining.py](https://www.jianshu.com/p/22e462f01d8c)  
+在执行预训练的时候针对以上两种标签分别利用bert模型的不同输出部件，计算loss，然后进行梯度下降优化。
 
 
 
