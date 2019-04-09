@@ -42,8 +42,9 @@ tokenization是对原始句子内容的解析，分为BasicTokenizer和Wordpiece
   - [实例](https://eliyar.biz/nlp_chinese_bert_ner/)  
 - [使用预训练语言模型BERT做中文NER(bert-chinese-ner-master)](https://github.com/ProHiryu/bert-chinese-ner),这个代码没有加入BiLSTM和CRF，但是它是最基础的，之后的都在这上面改。    
 - [BERT-BiLSTM-CRF-NER](https://github.com/FuYanzhe2/Name-Entity-Recognition),这个代码加入了BiLSTM和CRF，路径：F:\google下载\BERT相关\Name-Entity-Recognition-master\BERT-BiLSTM-CRF-NER。    
-- [BERT-BiLSTM-CRF-NER-master](https://github.com/macanv/BERT-BiLSTM-CRF-NER),这个代码也加入了BiLSTM和CRF，但是和上面的相比功能好像更全，作者还生成了软件包，里面集成了bert-as-service。   
-**注意事项：** 这里面的代码一般都不能直接用，都需要按照README.md中进行配置，就是加个文件夹之类的。
+- [BERT-BiLSTM-CRF-NER-master](https://github.com/macanv/BERT-BiLSTM-CRF-NER),这个代码也加入了BiLSTM和CRF，但是和上面的相比功能好像更全，作者还生成了软件包，里面集成了bert-as-service。  
+**注意事项：**  
+这里面的代码一般都不能直接用，都需要按照README.md中进行配置，就是加个文件夹之类的。
 # 我的理解  
 参考BERT中自带的fine-tune的实例（run_squad.py和run_classifier.py）可以发现，想把BERT用于NER，首先得把自己的输入改造成BERT所需的格式，然后写一个Processor类，这个类就和run_classifier.py中的Processor结构相同，但是里面的方法要重写。除此之外，还可以加上自己的损失函数（在create_model中），还可以加入CRF层等。
 
