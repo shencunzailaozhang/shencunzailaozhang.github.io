@@ -1,6 +1,6 @@
 ---
 layout: post
-title: BiLSTM+CRF笔记
+title: BERT笔记
 date: 2019-04-07
 ---  
 # 前言  
