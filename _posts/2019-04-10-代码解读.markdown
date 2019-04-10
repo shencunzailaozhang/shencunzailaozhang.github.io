@@ -79,7 +79,7 @@ flags.DEFINE_bool(
     "do_train", True,
     "Whether to run training."
 )
-flags.DEFINE_bool("use_tpu", False, "Whether to use TPU or GPU/CPU.")
+flags.DEFINE_bool("use_tpu", False, "Whether to use TPU or GPU/CPU.")#tpu是google开发的有更强计算能力的芯片，我没有
 
 flags.DEFINE_bool("do_eval", True, "Whether to run eval on the dev set.")
 
@@ -98,7 +98,7 @@ flags.DEFINE_float("num_train_epochs", 3.0, "Total number of training epochs to 
 
 
 flags.DEFINE_float(
-    "warmup_proportion", 0.1,
+    "warmup_proportion", 0.1,# warmup_proportion：warm up 步数的比例，比如说总共学习100步，warmup_proportion=0.1表示前10步用来warm up，warm up时以较低的学习率进行学习(lr = global_step/num_warmup_steps * init_lr)，10步之后以正常(或衰减)的学习率来学习。
     "Proportion of training to perform linear learning rate warmup for. "
     "E.g., 0.1 = 10% of training.")
 
@@ -529,10 +529,13 @@ def main(_):
     num_warmup_steps = None
 
     if FLAGS.do_train:
-        train_examples = processor.get_train_examples(FLAGS.data_dir)
+    '''
+    531-571注释
+    '''
+        train_examples = processor.get_train_examples(FLAGS.data_dir)#首先从文件夹中取出训练数据train.txt
         num_train_steps = int(
-            len(train_examples) / FLAGS.train_batch_size * FLAGS.num_train_epochs)
-        num_warmup_steps = int(num_train_steps * FLAGS.warmup_proportion)
+            len(train_examples) / FLAGS.train_batch_size * FLAGS.num_train_epochs)#训练步数
+        num_warmup_steps = int(num_train_steps * FLAGS.warmup_proportion)#warmup的步数
 
     model_fn = model_fn_builder(
         bert_config=bert_config,
@@ -554,13 +557,13 @@ def main(_):
 
     if FLAGS.do_train:
         train_file = os.path.join(FLAGS.output_dir, "train.tf_record")
-        filed_based_convert_examples_to_features(
+        filed_based_convert_examples_to_features(#将examples转为tensorflow需要的格式并写入train_file中
             train_examples, label_list, FLAGS.max_seq_length, tokenizer, train_file)
         tf.logging.info("***** Running training *****")
         tf.logging.info("  Num examples = %d", len(train_examples))
         tf.logging.info("  Batch size = %d", FLAGS.train_batch_size)
         tf.logging.info("  Num steps = %d", num_train_steps)
-        train_input_fn = file_based_input_fn_builder(
+        train_input_fn = file_based_input_fn_builder(#将train_file变为train_input_fn，最终输入到estimator中进行训练
             input_file=train_file,
             seq_length=FLAGS.max_seq_length,
             is_training=True,
